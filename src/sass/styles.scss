@@ -1,0 +1,12 @@
+@import "compass/reset";
+@import "compass";
+
+$red: #da2128;
+
+
+h1, h2, h3, h4, h5{
+    font-family: "myriad-pro", "Myriad Pro", Arial, Tahoma, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
