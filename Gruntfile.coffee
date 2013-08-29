@@ -38,13 +38,14 @@ module.exports = (grunt) ->
     connect:
       server:
         options:
-          port: 8090
+          port: 8000
           base: '<%= config.build %>'
 
 
     # ---
     # clean
     clean:
+      build: ['<%= config.build %>/**/*']
       dist: ['<%= config.dist %>/**/*']
       export: ['<%= config.export %>/**/*']
 
@@ -129,7 +130,9 @@ module.exports = (grunt) ->
       build:
         options:
           pretty: true
-          data: grunt.file.readJSON('data.json')
+          data: 
+            data: grunt.file.readJSON('data.json') # set of variables
+            head_css: grunt.file.read('build/css/head.css') # inline head css for responsiveness
 
         files: [
           expand: true
@@ -172,5 +175,5 @@ module.exports = (grunt) ->
 
   # task
   grunt.registerTask('default', ['connect', 'watch'])
-  grunt.registerTask('build', ['jade', 'compass', 'inlinecss','copy:build']) # add image compress?
-  grunt.registerTask('export', ['copy:dist','compress:dist','compress:export'])
+  grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'copy:build']) # add image compress?
+  grunt.registerTask('export', ['copy:dist', 'compress:dist', 'compress:export'])
