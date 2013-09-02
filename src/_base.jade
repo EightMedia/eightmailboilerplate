@@ -1,62 +1,65 @@
 doctype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 html(lang="nl")
-    head
-        title #{data.title}
-        meta(http-equiv="imagetoolbar", content="no")
+  head
+      title #{data.title}
+      meta(http-equiv="imagetoolbar", content="no")
 
-        link(rel='stylesheet', href='css/styles.css')
+      link(rel='stylesheet', href='css/styles.css')
 
-        style(type="text/css") #{head_css}
+      style(type="text/css") #{head_css}
 
-        //if gte mso 9
-            link(rel='stylesheet', href='css/outlook.css')
+  body
+      #container
+          table#main(width='100%', cellspacing='0', cellpadding='0', border='0')
+            tr
+              td &nbsp;
+              td#container-width(width='600')
 
-    body
-        #container
-            table(width='100%', cellspacing='0', cellpadding='0', bgcolor='#ffffff', border='0')
-              tr
-                td &nbsp;
-                td#container-width(width='600')
+                // header
+                table#header(width='100%', cellspacing='0', cellpadding='0', border='0')
+                  tr: td.spacer-row-small  
+                  tr
+                    td(align='left')
+                      a#logo-link(href='#{data.website.href}')
+                        img#logo(src='http://placehold.it/200x150/407BBF/ffffff', width='200', height='150', alt='#{data.title}')
+                  tr: td.spacer-row(colspan='3')
 
-                  // header
-                  table#header(width='100%', cellspacing='0', cellpadding='0', border='0')
-                    tr
-                      td.spacer-row-small  
-                    tr
-                      td(align='center')
-                        a#logo-link(href='http://')
-                          img#logo(src='http://placehold.it/177x104', width='177', height='104', alt='Logo')
-                    tr
-                      td.spacer-row-small  
+                // content
+                table#content(width='100%', cellspacing='0', cellpadding='0', border='0', bgcolor='#ffffff')
+                  tr: td.spacer-row(colspan='3')
+
+                  // intro
+                  tr
+                    td.spacer(width='20')
+                    td
+                      block intro
+                    td.spacer(width='20')
+                  
 
                   // content
-                  table#content(width='100%', cellspacing='0', cellpadding='0', border='0')
-                    tr
-                      td.spacer-row(colspan='3')  
-                    tr
-                      td.spacer(width='20')  
-                      td
-                        p
-                          | Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
-                        p
-                          | Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
-                      td.spacer(width='20')  
-                    tr
-                      td.spacer(colspan='3')  
+                  tr: td.spacer(colspan='3')
+                  block content
+                  tr: td.spacer(colspan='3')
 
-                  // footer
-                  table.footer(width='100%', cellspacing='0', cellpadding='0', bgcolor='#ffffff')
-                    tr
-                      td(height='15', colspan='4')  
-                    tr
-                      td(width='30')  
-                      td.mobile-hidden(width='145', valign='top')
-                        a(target='_blank', href='http://')
-                          img.image_fix(src='http://placehold.it/132x28', width='132', height='28', alt='Logo', border='0')
-                      td
-                        p
-                          | Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
-                      td(width='30')  
-                td &nbsp;
-              tr
-                td(height='30', colspan='3')
+
+                // footer icons
+                table.footer.footer-icons(width='100%', cellspacing='0', cellpadding='0', bgcolor='#ffffff')
+                  tr: td(height='15', colspan='5')
+                  tr
+                    td.spacer(width='20')
+                    td 
+                      block footer-icons
+                    td.spacer(width='20')
+                  tr: td(height='15', colspan='5')
+
+
+                // footer
+                table.footer(width='100%', cellspacing='0', cellpadding='0', bgcolor='#ffffff')
+                  tr: td(height='15', colspan='5')
+                  tr
+                    td.spacer(width='20')
+                    block footer
+                    td.spacer(width='20')
+
+              td &nbsp;
+            tr: td(height='30', colspan='3')

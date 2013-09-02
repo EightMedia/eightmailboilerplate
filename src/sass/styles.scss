@@ -1,63 +1,104 @@
+$black          : #212121; // text
+$grey           : #838383; // footer text
+$subtlegrey     : #ececec; // lines
+$supersubtlegrey: #fafafa; // backgrounds
+
+$headings       : #407BBF; // headings
+$bg             : #D5E0F1;
+
+$textalign      : 'left';
+
+
 html, body, .container {
-    background: #ffffff;
-    color: #353535;
+    background: $bg;
+    color: $black;
     font-family: Arial, "Lucida Grande", sans-serif; 
     font-weight: 400;
     font-stretch: normal;
     font-size: 14px;
     line-height: 22px;
 }
+#main{
+    background: $bg;
+}
 p {
     margin-top: 0;
-    margin-bottom: 20px;
-    color: #353535;
+    margin-bottom: 15px;
+    color: $black;
 }
 a {
     text-decoration: underline;
-    color: #da2128;
+    color: $headings;
 }
 
-.footer{
-    border: 1px solid #ececec;
-    font-size: 11px;
-    color: #838383;
-    line-height: 20px;
-}
-    .footer p{
-        font-size: 11px;
-        color: #838383;
-        line-height: 20px;
-    }
-    .footer a{
-        color: #838383;
-        text-decoration: underline;
-    }
-.disclaimer{
-    color: #546a75;
-    font-size: 12px;
+
+/* content */
+
+#content .title{
+    font-weight: bold;
+    color: $headings;
+    font-size: 25px;
+    line-height: 32px;
 }
 
+#content .title a{
+    text-decoration: none !important;
+}
 
 #content{
-    border-left: 1px solid #ececec;
-    border-right: 1px solid #ececec;
-    border-top: 1px solid #ececec;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
+    border-left: 1px solid $subtlegrey;
+    border-right: 1px solid $subtlegrey;
+    border-top: 1px solid $subtlegrey;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: $textalign;
 }
 
     #content p{
-        font-size: 20px;
-        line-height: 30px;
-        text-align: center;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: $textalign;
     }
 
+
+/* footer */
+.footer{
+    border: 1px solid $subtlegrey;
+    font-size: 12px;
+    color: $grey;
+    line-height: 18px;
+}
+    .footer p{
+        font-size: 12px;
+        color: $grey;
+        line-height: 18px;
+    }
+    .footer a{
+        color: $grey;
+        text-decoration: underline;
+    }
+
+    .footer .title{
+        margin-bottom: 5px;
+        color: $headings;
+        font-weight: bold;
+    }
+
+/* footer icons */
+.footer-icons{
+    border-bottom: none;
+}
+    .footer-icons td{
+        background: $headings;
+    }
+
+
+/* spacer */
 .spacer-hr{
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid $subtlegrey;
 }
 .spacer-hr-top{
-    border-top: 1px solid #ececec;
+    border-top: 1px solid $subtlegrey;
 }
 .spacer-row{
     height: 20px;

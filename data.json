@@ -1,6 +1,10 @@
 {
-    "title": "Awesome EDM",
-    "urls": {
-        "main": "http://www.google.com"
-    }
+    "title": "My Fantastic Email",
+    "website": {
+        "title": "google.nl",
+        "href": "http://www.google.com/"
+    },
+    "unsubscribe": "http://www.google.com/unsubscribe",
+    "facebook_url": "https://www.facebook.com/",
+    "twitter_url": "https://twitter.com/"
 }

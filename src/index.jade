@@ -1,1 +1,82 @@
 extends _base
+
+// header
+block header
+    tr
+        td.spacer(width='20')  
+        td.title My Fantastic Email
+        td.spacer(width='20')
+
+    tr: td.spacer-row(colspan='3')
+
+
+
+// intro
+block intro
+    p.title My Fantastic Email
+    p.
+        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
+        procrastinate B2C users after installed base benefits. Dramatically visualize customer 
+        directed convergence without revolutionary ROI.
+    p.
+        Efficiently unleash cross-media information without cross-media value. Quickly maximize 
+        timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
+        solutions without functional solutions.
+    
+
+
+// content
+block content
+
+    // repeater
+    each n in [1,2,3]
+        tr
+            td(colspan="3")
+                a(href="#{data.website.href}#{n}/")
+                    img(src="http://placehold.it/1200x700/407BBF/ffffff", width="600", height="", editable="true")
+
+        tr: td.spacer-row(colspan='3')
+
+        tr
+            td.spacer(width='20')
+            td
+                p.title 
+                    a(href="#{data.website.href}#{n}/") Subheading
+                p.
+                    Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
+                    procrastinate B2C users after installed base benefits. Dramatically visualize customer 
+                    directed convergence without revolutionary ROI.
+                p.
+                    Efficiently unleash cross-media information without cross-media value. Quickly maximize 
+                    timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
+                    solutions without functional solutions.
+
+                p: a(href="#{data.website.href}#{n}/") Read more &rsaquo;
+            td.spacer(width='20')
+
+        tr: td.spacer-row(colspan='3')
+
+
+
+// footer icons
+block footer-icons
+    a(href="#{data.twitter_url}"): img(src="img/twitter.gif", width="30", height="30") 
+    &nbsp;
+    a(href="#{data.facebook_url}"): img(src="img/facebook.gif", width="30", height="30") 
+
+
+
+
+// footer
+block footer
+    td(valign="top", width="45%")
+        p.title Disclaimer
+        p Dramatically maintain clicks-and-mortar solutions without functional solutions because you subscribed at #{data.website.title}
+        p Copyright &copy; All rights reserved.
+
+    td.spacer(width='20')
+    td(valign="top", width="45%")
+        p.title Unsubscribe
+        p No more news from us? 
+            a(href="#{data.unsubscribe}") Unsubscribe
+        p Collaboratively administrate empowered markets via plug-and-play networks.
