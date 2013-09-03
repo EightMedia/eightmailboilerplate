@@ -5,6 +5,7 @@ $supersubtlegrey: #fafafa; // backgrounds
 
 $headings       : #407BBF; // headings
 $bg             : #D5E0F1;
+$borders        : darken(#D5E0F1, 4);
 
 $textalign      : 'left';
 
@@ -46,9 +47,9 @@ a {
 }
 
 #content{
-    border-left: 1px solid $subtlegrey;
-    border-right: 1px solid $subtlegrey;
-    border-top: 1px solid $subtlegrey;
+    border-left: 1px solid $borders;
+    border-right: 1px solid $borders;
+    border-top: 1px solid $borders;
     font-size: 16px;
     line-height: 24px;
     text-align: $textalign;
@@ -63,7 +64,7 @@ a {
 
 /* footer */
 .footer{
-    border: 1px solid $subtlegrey;
+    border: 1px solid $borders;
     font-size: 12px;
     color: $grey;
     line-height: 18px;
