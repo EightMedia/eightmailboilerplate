@@ -32,6 +32,10 @@ module.exports = (grunt) ->
         files: ['<%= config.src %>/**/*.jade']
         tasks: ['build']
 
+      data:
+        files: ['data.json']
+        tasks: ['build']
+
 
     # ---
     # devserver
