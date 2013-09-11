@@ -8,12 +8,12 @@ $bg             : #D5E0F1;
 $borders        : darken(#D5E0F1, 4);
 
 $textalign      : 'left';
-
+$font           : Arial, "Lucida Grande", sans-serif; 
 
 html, body, .container {
     background: $bg;
     color: $black;
-    font-family: Arial, "Lucida Grande", sans-serif; 
+    font-family: $font; 
     font-weight: 400;
     font-stretch: normal;
     font-size: 14px;
@@ -26,12 +26,15 @@ p {
     margin-top: 0;
     margin-bottom: 15px;
     color: $black;
+    font-family: $font; 
 }
 a {
     text-decoration: underline;
     color: $headings;
 }
-
+a img{
+    border: 0;
+}
 
 /* content */
 
