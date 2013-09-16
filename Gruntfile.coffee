@@ -136,7 +136,7 @@ module.exports = (grunt) ->
           pretty: true
           data: 
             data: grunt.file.readJSON('data.json') # set of variables
-            head_css: grunt.file.read('build/css/head.css') # inline head css for responsiveness
+            responsive_css: grunt.file.read('build/css/responsive.css') # inline head css for responsiveness
 
         files: [
           expand: true

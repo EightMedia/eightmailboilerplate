@@ -3,9 +3,9 @@ $grey           : #838383; // footer text
 $subtlegrey     : #ececec; // lines
 $supersubtlegrey: #fafafa; // backgrounds
 
-$headings       : #407BBF; // headings
-$bg             : #D5E0F1;
-$borders        : darken(#D5E0F1, 4);
+$headings       : #d2232a; // headings
+$bg             : #efefef;
+$borders        : #c8c8c8;
 $buttons        : $headings;
 
 $textalign      : 'center';
@@ -36,6 +36,14 @@ a {
 a img{
     border: 0;
 }
+
+// preheader
+#preheader .p{
+    font-size: 11px;
+}
+    #preheader a{
+        color: $black;
+    }
 
 
 // content

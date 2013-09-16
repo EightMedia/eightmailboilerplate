@@ -1,0 +1,19 @@
+mixin table
+    table(id=attributes.id, 
+        class=attributes.class, 
+        align=attributes.align, 
+        width=(attributes.width) ? attributes.width : '100%', 
+        bgcolor=(attributes.bgcolor) ? attributes.bgcolor : '',
+        cellspacing='0', 
+        cellpadding='0', 
+        border='0'
+        )
+    
+        block
+
+
+mixin button
+    +table(align='center', width='186', class='button-table')
+        tr
+            td.button(colspan='3', align='center')
+                a(href="#{data.website.href}") Click here &rsaquo;
