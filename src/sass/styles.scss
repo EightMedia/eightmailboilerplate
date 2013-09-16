@@ -6,8 +6,9 @@ $supersubtlegrey: #fafafa; // backgrounds
 $headings       : #407BBF; // headings
 $bg             : #D5E0F1;
 $borders        : darken(#D5E0F1, 4);
+$buttons        : $headings;
 
-$textalign      : 'left';
+$textalign      : 'center';
 $font           : Arial, "Lucida Grande", sans-serif; 
 
 html, body, .container {
@@ -36,8 +37,8 @@ a img{
     border: 0;
 }
 
-/* content */
 
+// content
 #content .title{
     font-weight: bold;
     color: $headings;
@@ -65,7 +66,28 @@ a img{
     }
 
 
-/* footer */
+// button
+.button, 
+.button a{
+    background: $buttons;
+    color: #fff;
+    font-weight: bold;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: $font; 
+}
+
+.button{
+    padding: 10px 30px;
+}    
+
+
+// footer
 .footer{
     border: 1px solid $borders;
     font-size: 12px;
@@ -88,7 +110,8 @@ a img{
         font-weight: bold;
     }
 
-/* footer icons */
+
+// footer icons
 .footer-icons{
     border-bottom: none;
 }
@@ -97,7 +120,8 @@ a img{
     }
 
 
-/* spacer */
+
+// spacers
 .spacer-hr{
     border-bottom: 1px solid $subtlegrey;
 }

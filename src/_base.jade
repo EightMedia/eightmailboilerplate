@@ -1,3 +1,5 @@
+include _mixins
+
 doctype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 html(lang="nl")
   head
@@ -7,39 +9,74 @@ html(lang="nl")
       link(rel='stylesheet', href='css/styles.css')
       meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
 
-      style(type="text/css") #{head_css}
+      style(type="text/css") !{head_css}
 
   body
       #container
-          table#main(width='100%', cellspacing='0', cellpadding='0', border='0')
+          +table#main
             tr
               td &nbsp;
               td#container-width(width='600')
 
                 // header
                 table#header(width='100%', cellspacing='0', cellpadding='0', border='0')
-                  tr: td.spacer-row-small  
+                  tr: td.spacer-row-small &nbsp; 
                   tr
                     td(align='left')
                       a#logo-link(href='#{data.website.href}')
                         img#logo(src='http://placehold.it/200x150/407BBF/ffffff', width='200', height='150', alt='#{data.title}')
-                  tr: td.spacer-row(colspan='3')
+                  tr: td.spacer-row(colspan='3') &nbsp;
 
                 // content
                 table#content(width='100%', cellspacing='0', cellpadding='0', border='0', bgcolor='#ffffff')
-                  tr: td.spacer-row(colspan='3')
+                  tr: td.spacer-row(colspan='3') &nbsp;
 
                   // intro
                   tr
                     td.spacer(width='20')
                     td
-                      block intro
+                      p.title My Fantastic Email
+                      p.
+                        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
+                        procrastinate B2C users after installed base benefits. Dramatically visualize customer 
+                        directed convergence without revolutionary ROI.
+                      p.
+                        Efficiently unleash cross-media information without cross-media value. Quickly maximize 
+                        timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
+                        solutions without functional solutions.
+
                     td.spacer(width='20')
                   
 
                   // content
                   tr: td.spacer(colspan='3')
-                  block content
+                  // repeater
+                  each n in [1,2,3]
+                      tr
+                          td(colspan="3")
+                              a(href="#{data.website.href}#{n}/")
+                                  img(src="http://placebear.com/1200/#{Math.round(Math.random() * 400)+ 500}", width="600", height="", editable="true")
+
+                      tr: td.spacer-row(colspan='3') &nbsp;
+
+                      tr
+                          td.spacer(width='20')
+                          td
+                              p.title 
+                                a(href="#{data.website.href}#{n}/") Subheading
+                              p.
+                                Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
+                                procrastinate B2C users after installed base benefits. Dramatically visualize customer 
+                                directed convergence without revolutionary ROI.
+                              p.
+                                Efficiently unleash cross-media information without cross-media value. Quickly maximize 
+                                timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
+                                solutions without functional solutions.
+
+                              +button
+                          td.spacer(width='20')
+
+                      tr: td.spacer-row(colspan='3') &nbsp;
                   tr: td.spacer(colspan='3')
 
 
@@ -49,7 +86,9 @@ html(lang="nl")
                   tr
                     td.spacer(width='20')
                     td 
-                      block footer-icons
+                      a(href="#{data.twitter_url}"): img(src="img/twitter.gif", width="30", height="30") 
+                      &nbsp;
+                      a(href="#{data.facebook_url}"): img(src="img/facebook.gif", width="30", height="30") 
                     td.spacer(width='20')
                   tr: td(height='15', colspan='5')
 
@@ -59,7 +98,17 @@ html(lang="nl")
                   tr: td(height='15', colspan='5')
                   tr
                     td.spacer(width='20')
-                    block footer
+                    td(valign="top", width="45%")
+                      p.title Disclaimer
+                      p Dramatically maintain clicks-and-mortar solutions without functional solutions because you subscribed at #{data.website.title}
+                      p Copyright &copy; All rights reserved.
+
+                    td.spacer(width='20')
+                    td(valign="top", width="45%")
+                      p.title Unsubscribe
+                      p No more news from us? 
+                          a(href="#{data.unsubscribe}") Unsubscribe
+                      p Collaboratively administrate empowered markets via plug-and-play networks.
                     td.spacer(width='20')
 
               td &nbsp;
