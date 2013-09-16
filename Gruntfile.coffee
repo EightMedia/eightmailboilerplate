@@ -7,6 +7,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-inline-css')
   grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-breakshots')
 
 
   grunt.initConfig
@@ -19,6 +20,7 @@ module.exports = (grunt) ->
       build: 'build' # compiled files
       dist: 'dist' # html + img.zip
       export: 'zip' # deliverables (zip, html, images)
+      screenshots: 'screenshots' # responsive screenshots
 
 
     # ---
@@ -177,7 +179,20 @@ module.exports = (grunt) ->
         ]
 
 
+    # ---
+    # screenshots
+    breakshots:
+      github:
+        options:
+          breakpoints: [320, 640]
+        files: 
+          '<%= config.screenshots %>': ['<%= config.build %>/*.html']
+          
+
+
   # task
   grunt.registerTask('default', ['connect', 'watch'])
   grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'copy:build']) # add image compress?
   grunt.registerTask('export', ['copy:dist', 'compress:dist', 'compress:export'])
+
+  grunt.registerTask('screenshot', ['connect','breakshots:github'])

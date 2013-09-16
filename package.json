@@ -12,6 +12,7 @@
     "grunt-inline-css": "git://github.com/Aratramba/grunt-inline-css.git",
     "grunt-contrib-jade": "~0.8.0",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-breakshots": "~0.2.x"
   }
 }
