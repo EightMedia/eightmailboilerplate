@@ -47,6 +47,11 @@ module.exports = (grunt) ->
           port: 8000
           base: '<%= config.build %>'
 
+      tmp:
+        options:
+          port: 8000
+          base: ''
+
 
     # ---
     # clean
@@ -185,8 +190,12 @@ module.exports = (grunt) ->
       github:
         options:
           breakpoints: [320, 640]
-        files: 
-          '<%= config.screenshots %>': ['<%= config.build %>/*.html']
+        files: [
+          {
+            src: ['build/*.html']
+            dest: '<%= config.screenshots %>/'
+          }
+        ]
           
 
 
@@ -195,4 +204,4 @@ module.exports = (grunt) ->
   grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'copy:build']) # add image compress?
   grunt.registerTask('export', ['copy:dist', 'compress:dist', 'compress:export'])
 
-  grunt.registerTask('screenshot', ['connect','breakshots:github'])
+  grunt.registerTask('screenshot', ['connect:tmp','breakshots:github'])

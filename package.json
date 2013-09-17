@@ -1,6 +1,6 @@
 {
   "name": "eightmailboilerplate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Eight Media",
   "dependencies": {},
   "devDependencies": {
@@ -13,6 +13,6 @@
     "grunt-contrib-jade": "~0.8.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-breakshots": "~0.2.x"
+    "grunt-breakshots": "git://github.com/Aratramba/grunt-breakshots.git"
   }
 }
