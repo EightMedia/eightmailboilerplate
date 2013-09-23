@@ -1,7 +1,7 @@
 {
   "name": "eightmailboilerplate",
   "version": "0.0.4",
-  "author": "Eight Media",
+  "author": "Arjen Scherff-de Water",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.x",
