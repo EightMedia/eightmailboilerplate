@@ -200,7 +200,7 @@ module.exports = (grunt) ->
 
 
   # task
-  grunt.registerTask('default', ['connect', 'watch'])
+  grunt.registerTask('default', ['connect:server', 'watch'])
   grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'copy:build']) # add image compress?
   grunt.registerTask('export', ['copy:dist', 'compress:dist', 'compress:export'])
 
