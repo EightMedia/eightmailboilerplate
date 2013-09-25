@@ -1,14 +1,16 @@
 module.exports = (grunt) ->
-  grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-contrib-compass')
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-compress')
-  grunt.loadNpmTasks('grunt-contrib-connect')
-  grunt.loadNpmTasks('grunt-contrib-copy')
-  grunt.loadNpmTasks('grunt-inline-css')
-  grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-breakshots')
-  grunt.loadNpmTasks('grunt-contrib-imagemin')
+  [
+    'grunt-contrib-watch'
+    'grunt-contrib-compass'
+    'grunt-contrib-jade'
+    'grunt-contrib-compress'
+    'grunt-contrib-connect'
+    'grunt-contrib-copy'
+    'grunt-inline-css'
+    'grunt-contrib-clean'
+    'grunt-breakshots'
+    'grunt-contrib-imagemin'
+  ].forEach(grunt.loadNpmTasks)
 
 
   grunt.initConfig
