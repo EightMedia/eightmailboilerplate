@@ -8,6 +8,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-inline-css')
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-breakshots')
+  grunt.loadNpmTasks('grunt-contrib-imagemin')
 
 
   grunt.initConfig
@@ -38,6 +39,10 @@ module.exports = (grunt) ->
         files: ['data.json']
         tasks: ['build']
 
+      images:
+        files: ['<%= config.src %>/img/*']
+        tasks: ['imagemin']
+
 
     # ---
     # devserver
@@ -64,18 +69,6 @@ module.exports = (grunt) ->
     # ---
     # copy
     copy:
-
-      # copy images to build folder
-      build:
-        files:
-          [
-            {
-              expand: true
-              src: ['img/**/*']
-              dest: '<%= config.build %>/'
-              cwd: '<%= config.src %>/'
-            }
-          ]
 
       # copy html files to dist
       dist: 
@@ -196,12 +189,24 @@ module.exports = (grunt) ->
             dest: '<%= config.screenshots %>/'
           }
         ]
+
+
+    # ---
+    # image min
+    imagemin:
+      dist:
+        files: [
+          expand: true
+          cwd: '<%= config.src %>'
+          src: ['img/**/*.{png,jpg,gif}']
+          dest: '<%= config.build %>'
+        ]
           
 
 
   # task
   grunt.registerTask('default', ['connect:server', 'watch'])
-  grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'copy:build']) # add image compress?
+  grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'imagemin'])
   grunt.registerTask('export', ['copy:dist', 'compress:dist', 'compress:export'])
 
   grunt.registerTask('screenshot', ['connect:tmp','breakshots:github'])

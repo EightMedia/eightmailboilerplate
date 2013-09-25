@@ -1,5 +1,6 @@
 mixin table
-    table(id=attributes.id, 
+    table(
+        id=attributes.id, 
         class=attributes.class, 
         align=attributes.align, 
         width=(attributes.width) ? attributes.width : '100%', 
@@ -7,8 +8,7 @@ mixin table
         cellspacing='0', 
         cellpadding='0', 
         border='0'
-        )
-    
+    )
         block
 
 
@@ -17,3 +17,31 @@ mixin button
         tr
             td.button(colspan='3', align='center')
                 a(href="#{data.website.href}") Click here &rsaquo;
+
+
+mixin spacer-row
+    tr
+        td(
+            class=(attributes.class) ? attributes.class : 'spacer-row',
+            colspan=(attributes.colspan) ? attributes.colspan : '3'
+        ) &nbsp;
+    block
+
+
+mixin spacer-row-small
+    +spacer-row(class='spacer-row-small', attributes)
+
+
+mixin text-block
+    tr
+        td.spacer(width='20')
+        td
+            block
+        td.spacer(width='20')
+
+
+mixin text-row
+    +spacer-row-small
+    +text-block
+        block
+    +spacer-row-small

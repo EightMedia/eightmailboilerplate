@@ -1,19 +1,24 @@
-$black          : #212121; // text
+$green: #0b7e98;
+$red: #e4362e;
+$text-light: #717171;
+$text-dark: #2b2b2b;
+
+
 $grey           : #838383; // footer text
 $subtlegrey     : #ececec; // lines
 $supersubtlegrey: #fafafa; // backgrounds
 
-$headings       : #d2232a; // headings
-$bg             : #efefef;
-$borders        : #c8c8c8;
+$headings       : $red; // headings
+$bg             : #fcfcfc;
+$borders        : #eaeaea;
 $buttons        : $headings;
 
 $textalign      : 'center';
-$font           : Arial, "Lucida Grande", sans-serif; 
+$font           : "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 
 html, body, .container {
     background: $bg;
-    color: $black;
+    color: $text-dark;
     font-family: $font; 
     font-weight: 400;
     font-stretch: normal;
@@ -23,10 +28,11 @@ html, body, .container {
 #main{
     background: $bg;
 }
-p {
+p,
+.p {
     margin-top: 0;
     margin-bottom: 15px;
-    color: $black;
+    color: $text-dark;
     font-family: $font; 
 }
 a {
@@ -42,7 +48,7 @@ a img{
     font-size: 11px;
 }
     #preheader a{
-        color: $black;
+        color: $text-dark;
     }
 
 
@@ -67,7 +73,8 @@ a img{
     text-align: $textalign;
 }
 
-    #content p{
+    #content p,
+    #content .p{
         font-size: 16px;
         line-height: 24px;
         text-align: $textalign;
@@ -102,7 +109,7 @@ a img{
     color: $grey;
     line-height: 18px;
 }
-    .footer p{
+    .footer .p{
         font-size: 12px;
         color: $grey;
         line-height: 18px;
@@ -113,6 +120,7 @@ a img{
     }
 
     .footer .title{
+        font-size: 12px;
         margin-bottom: 5px;
         color: $headings;
         font-weight: bold;
