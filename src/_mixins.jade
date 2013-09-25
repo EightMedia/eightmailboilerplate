@@ -19,6 +19,7 @@ mixin button
                 a(href="#{data.website.href}") Click here &rsaquo;
 
 
+// spacer
 mixin spacer-row
     tr
         td(
@@ -32,16 +33,32 @@ mixin spacer-row-small
     +spacer-row(class='spacer-row-small', attributes)
 
 
+// text
 mixin text-block
     tr
-        td.spacer(width='20')
+        td.spacer(width='20') &nbsp;
         td
             block
-        td.spacer(width='20')
+        td.spacer(width='20') &nbsp;
 
 
 mixin text-row
     +spacer-row-small
     +text-block
+        block
+    +spacer-row-small
+
+
+
+// image
+mixin image-block
+    tr
+        td(colspan="3")
+            block
+
+
+mixin image-row
+    +spacer-row-small
+    +image-block
         block
     +spacer-row-small

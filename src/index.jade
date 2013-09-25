@@ -46,16 +46,16 @@ html(lang="nl")
 
                   // intro
                   +text-row 
-                    span.title My Fantastic Email
+                    .title My Fantastic Email
 
                   +text-row 
-                    span.p.
+                    .p.
                       Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
                       procrastinate B2C users after installed base benefits. Dramatically visualize customer 
                       directed convergence without revolutionary ROI.
 
                   +text-row 
-                    span.p.
+                    .p.
                       Efficiently unleash cross-media information without cross-media value. Quickly maximize 
                       timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
                       solutions without functional solutions.
@@ -66,22 +66,22 @@ html(lang="nl")
                   // repeater
                   each n in [1,2,3]
 
-                    +text-row
+                    +image-row
                       a(href="#{data.website.href}#{n}/")
                         img(src="http://placekitten.com/1200/#{Math.round(Math.random() * 400)+ 500}", width="600", height="", editable="true")
 
                     +text-row
-                      span.title 
+                      .title 
                         a(href="#{data.website.href}#{n}/") Subheading
 
                     +text-row
-                      span.p.
+                      .p.
                         Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
                         procrastinate B2C users after installed base benefits. Dramatically visualize customer 
                         directed convergence without revolutionary ROI.
 
                     +text-row
-                      span.p.
+                      .p.
                         Efficiently unleash cross-media information without cross-media value. Quickly maximize 
                         timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
                         solutions without functional solutions.
@@ -113,23 +113,21 @@ html(lang="nl")
                     td(width="50%")
                       +table
                         +text-block
-                          span.title Disclaimer
+                          .title Disclaimer
                         +text-block
-                          span.p Dramatically maintain clicks-and-mortar solutions without functional solutions because you subscribed at #{data.website.title}
+                          .p Dramatically maintain clicks-and-mortar solutions without functional solutions because you subscribed at #{data.website.title}
                         +text-row
-                          span.p Copyright &copy; All rights reserved.
+                          .p Copyright &copy; All rights reserved.
                     td.spacer(width='20')
                     td(width="50%")
                       +table
                         +text-block
-                          span.title Unsubscribe
+                          .title Unsubscribe
                         +text-block
-                          span.p No more news from us? 
+                          .p No more news from us? 
                             a(href="#{data.unsubscribe}") Unsubscribe
                         +text-row
-                          span.p Collaboratively administrate empowered markets via plug-and-play networks.
-
-                  +spacer-row-small(colspan="2")
+                          .p Collaboratively administrate empowered markets via plug-and-play networks.
 
               td &nbsp;
             tr: td(height='30', colspan='3')

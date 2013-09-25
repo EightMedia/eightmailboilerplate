@@ -16,7 +16,7 @@ $buttons        : $headings;
 $textalign      : 'center';
 $font           : "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 
-html, body, .container {
+html, body, #container, #main {
     background: $bg;
     color: $text-dark;
     font-family: $font; 
@@ -24,9 +24,6 @@ html, body, .container {
     font-stretch: normal;
     font-size: 14px;
     line-height: 22px;
-}
-#main{
-    background: $bg;
 }
 p,
 .p {
