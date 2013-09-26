@@ -1,14 +1,14 @@
 // text
 mixin text-block
     tr
-        td.spacer(width='20') &nbsp;
+        +spacer-col
         td(valign="top")
             block
-        td.spacer(width='20') &nbsp;
+        +spacer-col
 
 
 mixin text-row
-    +spacer-row-small
+
     +text-block
         block
     +spacer-row-small
