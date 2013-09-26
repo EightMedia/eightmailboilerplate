@@ -8,7 +8,6 @@ module.exports = (grunt) ->
     'grunt-contrib-copy'
     'grunt-inline-css'
     'grunt-contrib-clean'
-    'grunt-breakshots'
     'grunt-contrib-imagemin'
   ].forEach(grunt.loadNpmTasks)
 
@@ -18,23 +17,16 @@ module.exports = (grunt) ->
     # config
     pkg: grunt.file.readJSON('package.json')
 
-    config:
-      src: 'src' # source files
-      build: 'build' # compiled files
-      dist: 'dist' # html + img.zip
-      export: 'zip' # deliverables (zip, html, images)
-      screenshots: 'screenshots' # responsive screenshots
-
 
     # ---
     # watch files
     watch:
       sass:
-        files: ['<%= config.src %>/sass/**/*.scss']
+        files: ['src/sass/**/*.scss']
         tasks: ['build']
 
       jade:
-        files: ['<%= config.src %>/**/*.jade']
+        files: ['src/**/*.jade']
         tasks: ['build']
 
       data:
@@ -42,7 +34,7 @@ module.exports = (grunt) ->
         tasks: ['build']
 
       images:
-        files: ['<%= config.src %>/img/*']
+        files: ['src/img/*']
         tasks: ['imagemin']
 
 
@@ -52,20 +44,15 @@ module.exports = (grunt) ->
       server:
         options:
           port: 8000
-          base: '<%= config.build %>'
-
-      tmp:
-        options:
-          port: 8000
-          base: ''
+          base: 'build/'
 
 
     # ---
     # clean
     clean:
-      build: ['<%= config.build %>/**/*']
-      dist: ['<%= config.dist %>/**/*']
-      export: ['<%= config.export %>/**/*']
+      build: ['build/**/*']
+      dist: ['dist/**/*']
+      export: ['zip/**/*']
 
 
     # ---
@@ -79,8 +66,8 @@ module.exports = (grunt) ->
             {
               expand: true
               src: ['**/*.html']
-              dest: '<%= config.dist %>/'
-              cwd: '<%= config.build %>/'
+              dest: 'dist/'
+              cwd: 'build/'
             }
           ]
 
@@ -92,14 +79,14 @@ module.exports = (grunt) ->
       # compress img.zip
       dist:
         options:
-          archive: "<%= config.dist %>/img.zip"
+          archive: "dist/img.zip"
           mode: 'zip'
         files: [
           {
             expand: true
             src: ['img/**']
             dest: ''
-            cwd: '<%= config.build %>'
+            cwd: 'build'
           }
         ]
 
@@ -108,7 +95,7 @@ module.exports = (grunt) ->
       export:
         options:
           mode: 'zip'
-          archive: """<%= config.export %>/<%= pkg.name %> (<%= grunt.template.date(new Date(), 'yyyymmddHHMMss') %>).zip"""
+          archive: """zip/<%= pkg.name %> (<%= grunt.template.date(new Date(), 'yyyymmddHHMMss') %>).zip"""
           
         files: [
 
@@ -117,7 +104,7 @@ module.exports = (grunt) ->
             expand: true
             src: ['**/*.html']
             dest: ''
-            cwd: '<%= config.build %>'
+            cwd: 'build'
           }
 
           # add images folder to zip file
@@ -125,7 +112,7 @@ module.exports = (grunt) ->
             expand: true
             src: 'img/**'
             dest: ''
-            cwd: '<%= config.build %>'
+            cwd: 'build'
           }
         ]
 
@@ -138,16 +125,16 @@ module.exports = (grunt) ->
           pretty: true
           data: 
             data: grunt.file.readJSON('data.json') # set of variables
-            css: grunt.file.read('build/css/styles.css') # inline head css
-            responsive_css: grunt.file.read('build/css/responsive.css') # inline head css for responsiveness
+            css: grunt.file.read('build/css/styles.css') if grunt.file.exists('build/css/styles.css') # inline head css
+            responsive_css: grunt.file.read('build/css/responsive.css') if grunt.file.exists('build/css/responsive.css') # inline head css for responsiveness
 
         files: [
           expand: true
           pretty: true
           src: ['**/*.jade', '!**/_*.jade']
-          dest: '<%= config.build %>/'
+          dest: 'build/'
           ext: '.html'
-          cwd: '<%= config.src %>/'
+          cwd: 'src/'
         ]
 
 
@@ -156,8 +143,8 @@ module.exports = (grunt) ->
     compass: 
       dev:
         options:
-          sassDir: '<%= config.src %>/sass/'
-          cssDir: '<%= config.build %>/css/'
+          sassDir: 'src/sass/'
+          cssDir: 'build/css/'
           relativeAssets: false
           noLineComments: true
           force: true
@@ -174,22 +161,8 @@ module.exports = (grunt) ->
           {
             expand: true
             src: '**/*.html'
-            dest: '<%= config.build %>'
-            cwd: '<%= config.build %>'
-          }
-        ]
-
-
-    # ---
-    # screenshots
-    breakshots:
-      github:
-        options:
-          breakpoints: [320, 640]
-        files: [
-          {
-            src: ['build/*.html']
-            dest: '<%= config.screenshots %>/'
+            dest: 'build'
+            cwd: 'build'
           }
         ]
 
@@ -200,9 +173,9 @@ module.exports = (grunt) ->
       dist:
         files: [
           expand: true
-          cwd: '<%= config.src %>'
+          cwd: 'src'
           src: ['img/**/*.{png,jpg,gif}']
-          dest: '<%= config.build %>'
+          dest: 'build'
         ]
           
 
@@ -210,6 +183,4 @@ module.exports = (grunt) ->
   # task
   grunt.registerTask('default', ['connect:server', 'watch'])
   grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'imagemin'])
-  grunt.registerTask('export', ['copy:dist', 'compress:dist', 'compress:export'])
-
-  grunt.registerTask('screenshot', ['connect:tmp','breakshots:github'])
+  grunt.registerTask('export', ['build','copy:dist', 'compress:dist', 'compress:export'])
