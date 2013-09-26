@@ -1,0 +1,14 @@
+// text
+mixin text-block
+    tr
+        td.spacer(width='20') &nbsp;
+        td(valign="top")
+            block
+        td.spacer(width='20') &nbsp;
+
+
+mixin text-row
+    +spacer-row-small
+    +text-block
+        block
+    +spacer-row-small

@@ -1,0 +1,20 @@
+// spacer
+mixin spacer-row
+    tr
+        td(
+            class=(attributes.class) ? attributes.class : 'spacer-row',
+            colspan=(attributes.colspan) ? attributes.colspan : '3'
+        ) 
+            &nbsp;
+
+    block
+
+
+mixin spacer-row-small
+    +spacer-row(class='spacer-row-small', attributes)
+
+
+
+mixin spacer-col
+    td.spacer(width='20') 
+        block

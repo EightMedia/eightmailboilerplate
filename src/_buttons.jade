@@ -1,0 +1,9 @@
+//- usage:
+//- +button
+//- +button(title='foo', href='foo.com')
+
+mixin button
+    +table(align='center', width='186', class='button-table')
+        tr
+            td.button(colspan='3', align='center')
+                a(href="#{attributes.href ? attributes.href : data.website.href}") #{attributes.title ? attributes.title : 'Click here ›'}

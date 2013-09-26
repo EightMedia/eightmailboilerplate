@@ -1,0 +1,12 @@
+// image
+mixin image-block
+    tr
+        td(colspan="3")
+            block
+
+
+mixin image-row
+    +spacer-row-small
+    +image-block
+        block
+    +spacer-row-small
