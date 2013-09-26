@@ -51,7 +51,7 @@ module.exports = (grunt) ->
     # clean
     clean:
       build: ['build/**/*']
-      dist: ['dist/**/*']
+      campaignmonitor: ['campaignmonitor/**/*']
       export: ['zip/**/*']
 
 
@@ -59,14 +59,14 @@ module.exports = (grunt) ->
     # copy
     copy:
 
-      # copy html files to dist
-      dist: 
+      # copy html files to campaignmonitor
+      campaignmonitor: 
         files: 
           [
             {
               expand: true
               src: ['**/*.html']
-              dest: 'dist/'
+              dest: 'campaignmonitor/'
               cwd: 'build/'
             }
           ]
@@ -77,9 +77,9 @@ module.exports = (grunt) ->
     compress:
 
       # compress img.zip
-      dist:
+      campaignmonitor:
         options:
-          archive: "dist/img.zip"
+          archive: "campaignmonitor/img.zip"
           mode: 'zip'
         files: [
           {
@@ -170,7 +170,7 @@ module.exports = (grunt) ->
     # ---
     # image min
     imagemin:
-      dist:
+      build:
         files: [
           expand: true
           cwd: 'src'
@@ -182,5 +182,5 @@ module.exports = (grunt) ->
 
   # task
   grunt.registerTask('default', ['connect:server', 'watch'])
-  grunt.registerTask('build', ['clean:build', 'clean:dist', 'compass', 'jade', 'inlinecss', 'imagemin'])
-  grunt.registerTask('export', ['build','copy:dist', 'compress:dist', 'compress:export'])
+  grunt.registerTask('build', ['clean:build', 'clean:campaignmonitor', 'compass', 'jade', 'inlinecss', 'imagemin'])
+  grunt.registerTask('export', ['build','copy:campaignmonitor', 'compress:campaignmonitor', 'compress:export'])
