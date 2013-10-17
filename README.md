@@ -94,7 +94,9 @@ It's easiest to work with one file for all the links and text contents. So edit 
 ```
 
 ### Command line testmails
-You can test your mailing from the command line. Before you can send a test mail, run `grunt setup` and answer some questions about your smtp login and the addresses you wish to send the testmail to. This will generate a json file (which you can edit later if you wish). From now on you can send the testmail with `grunt mail`. 
+You can test your mailing from the command line. Before you can send a test mail, run `grunt setup` and answer some questions about your smtp login and the addresses you wish to send the testmail to. This will generate a json file (which you can edit later if you wish). 
+
+From now on you can send the testmail with `grunt mail`. 
 
 ```json
 {
