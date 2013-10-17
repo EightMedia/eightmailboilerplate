@@ -263,7 +263,7 @@ module.exports = (grunt) ->
 
 
     # ---
-    # dom munger
+    # update dom
     dom_munger:
       testmail:
         options:
