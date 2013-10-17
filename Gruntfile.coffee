@@ -1,4 +1,8 @@
 module.exports = (grunt) ->
+
+
+  # ---
+  # load npm modules
   [
     'grunt-contrib-watch'
     'grunt-contrib-compass'
@@ -9,13 +13,68 @@ module.exports = (grunt) ->
     'grunt-inline-css'
     'grunt-contrib-clean'
     'grunt-contrib-imagemin'
+    'grunt-nodemailer'
+    'grunt-include-replace'
+    'grunt-dom-munger'
   ].forEach(grunt.loadNpmTasks)
 
+
+
+  # ---
+  # load project tasks
+  grunt.loadTasks('tasks/setup/')
+
+
+
+  # ------------
+  # task sets
+
+  # default
+  grunt.registerTask('default', ['connect', 'watch'])
+
+  # build
+  grunt.registerTask('build', [
+    'clean:build'               # cleanup build directory
+    'compass'                   # compile scss
+    'imagemin'                  # compress images
+    'jade'                      # compile jade
+    'includereplace:styles'     # inline head styles
+    'inlinecss'                 # inline styles
+  ])
+
+  # export zip file and html file
+  grunt.registerTask('export', [
+    'build'                     # build all files
+    'copy:campaignmonitor'      # copy html files to campaignmonitor folder
+    'compress:campaignmonitor'  # compress images to campaignmonitor folder
+    'compress:export'           # create export zip file
+  ])
+  
+  # testmail task
+  grunt.registerTask('mail', [
+    #'build'                     # build all files
+    'clean:tmp'                 # clean tmp folder
+    'dom_munger:testmail'       # prepare files for testmail
+    'nodemailer'                # send mail
+    #'connect:keepalive'         # run server for images referring to localhost
+  ])
+
+
+
+  # ---
+  # aliases
+  grunt.registerTask('server', 'connect')
+
+
+
+  # ------------
+  # tasks
 
   grunt.initConfig
 
     # config
     pkg: grunt.file.readJSON('package.json')
+    setup: grunt.file.readJSON('setup.json')
 
 
     # ---
@@ -46,6 +105,12 @@ module.exports = (grunt) ->
           port: 8000
           base: 'build/'
 
+      keepalive:
+        options:
+          keepalive: true
+          port: 8000
+          base: 'build/'
+
 
     # ---
     # clean
@@ -53,13 +118,14 @@ module.exports = (grunt) ->
       build: ['build/**/*']
       campaignmonitor: ['campaignmonitor/**/*']
       export: ['zip/**/*']
+      tmp: ['tmp/**/*']
 
 
     # ---
     # copy
     copy:
 
-      # copy html files to campaignmonitor
+      # copy html files to campaignmonitor folder
       campaignmonitor: 
         files: 
           [
@@ -125,8 +191,6 @@ module.exports = (grunt) ->
           pretty: true
           data: 
             data: grunt.file.readJSON('data.json') # set of variables
-            css: grunt.file.read('build/css/styles.css') if grunt.file.exists('build/css/styles.css') # inline head css
-            responsive_css: grunt.file.read('build/css/responsive.css') if grunt.file.exists('build/css/responsive.css') # inline head css for responsiveness
 
         files: [
           expand: true
@@ -177,10 +241,70 @@ module.exports = (grunt) ->
           src: ['img/**/*.{png,jpg,gif}']
           dest: 'build'
         ]
-          
 
 
-  # task
-  grunt.registerTask('default', ['connect:server', 'watch'])
-  grunt.registerTask('build', ['clean:build', 'clean:campaignmonitor', 'compass', 'jade', 'inlinecss', 'imagemin'])
-  grunt.registerTask('export', ['build','copy:campaignmonitor', 'compress:campaignmonitor', 'compress:export'])
+    # ---
+    # node mailer
+    nodemailer:
+      options:
+        transport:
+          type: '<%= setup.transport.type %>'
+          options:
+            service: '<%= setup.transport.service %>'
+            auth: 
+              user: '<%= setup.auth.user %>'
+              pass: getPwd()
+        recipients: '<%= setup.recipients %>'
+        subject: "<%= pkg.name %>"
+        from: "<%= setup.auth.user %>"
+
+      external_html:
+        src: ['tmp/index.html']
+
+
+    # ---
+    # dom munger
+    dom_munger:
+      testmail:
+        options:
+          callback: ($) -> 
+
+            # update img src with localhost:8000
+            $('img').each ->
+              src = $(this).attr('src')
+
+              # update only local files
+              $(this).attr('src', "http://localhost:8000/#{src}") if src.substring(0,4) isnt "http"
+
+        files: [
+          expand: true
+          cwd: 'build'
+          src: ['*.html']
+          dest: 'tmp/'
+        ]
+
+
+
+
+
+    # ---
+    # replace and inline
+    includereplace:
+      styles:
+        src: 'build/*.html'
+        dest: ''
+
+
+
+
+# ---
+# decrypt password from setup file
+
+getPwd = ->
+  setup = require('./setup.json')
+
+  crypto = require('crypto')
+  decipher = crypto.createDecipher('aes256', 'eightmailboilerplate')
+  decrypted = decipher.update(setup.auth.pass, 'hex', 'utf8') + decipher.final('utf8')
+
+  return decrypted

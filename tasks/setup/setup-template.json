@@ -1,0 +1,16 @@
+{
+    "transport": {
+        "type": "SMTP",
+        "service": "Gmail"
+    },
+    "auth": {
+        "user": "",
+        "pass": ""
+    },
+    "recipients": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ]
+}
