@@ -14,15 +14,15 @@ This set of Grunt tasks removes a little bit of hassle from the tedious process 
 
 
 ## Getting started
-`git clone git@github.com:EightMedia/eightmailboilerplate.git`
-`npm install`
-`grunt`
+1. Run `git clone git@github.com:EightMedia/eightmailboilerplate.git`
+2. Run `npm install`
+3. Run `grunt`
 
 Head to http://localhost:8000 to view your generated html files.
 
 Open up your text editor and start editing files in `src/`; this is where all jade, scss and image files can be found.
 
-Optionally run `grunt setup` if you want to send testmails from the command line.
+4. Optionally run `grunt setup` if you want to send testmails from the command line.
 
 ---
 
