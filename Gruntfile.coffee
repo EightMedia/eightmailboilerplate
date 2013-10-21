@@ -304,10 +304,20 @@ module.exports = (grunt) ->
 # decrypt password from setup file
 
 getPwd = ->
-  setup = require('./setup.json')
+  fs = require('fs')
 
-  crypto = require('crypto')
-  decipher = crypto.createDecipher('aes256', 'eightmailboilerplate')
-  decrypted = decipher.update(setup.auth.pass, 'hex', 'utf8') + decipher.final('utf8')
+  # check if file exists
+  if fs.existsSync('./setup.json')
 
-  return decrypted
+    setup = require('./setup.json')
+
+    # check for auth
+    if setup.auth
+      crypto = require('crypto')
+
+      decipher = crypto.createDecipher('aes256', 'eightmailboilerplate')
+      decrypted = decipher.update(setup.auth.pass, 'hex', 'utf8') + decipher.final('utf8')
+
+      return decrypted
+
+  return false
