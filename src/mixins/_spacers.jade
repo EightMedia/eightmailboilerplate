@@ -1,4 +1,4 @@
-//- spacer
+//- basic spacer row
 mixin spacer-row
     tr
         td(
@@ -10,11 +10,12 @@ mixin spacer-row
     block
 
 
+//- small spacer row
 mixin spacer-row-small
     +spacer-row(class='spacer-row-small', attributes)
 
 
-
+//- spacer column
 mixin spacer-col
     td.spacer(width='20', class=(attributes.class) ? attributes.class : '') 
         img(src="img/spacer.gif", width="20")

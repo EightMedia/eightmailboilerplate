@@ -26,27 +26,20 @@ html(lang="nl")
                   +spacer-row-small
 
 
-
-                // header
-                +table#header
-                  +spacer-row-small
-                  tr
-                    td(align='left')
-                      a#logo-link(href='#{data.website.href}')
-                        img#logo(src='http://placehold.it/200x150/d2232a/ffffff&text=logo', width='200', height='150', alt='#{data.title}')
-                  +spacer-row
-
-
-
-
                 // content
                 +table#content(bgcolor='#ffffff')
+
+                  +image-row
+                      a#logo-link(href='#{data.website.href}')
+                        img#logo(src='http://placehold.it/600x150/d2232a/ffffff&text=logo', width='600', height='150', alt='#{data.title}')
+                  +spacer-row
+
 
                   +spacer-row-small
 
                   // intro
                   +text-row 
-                    .title My Fantastic Email
+                    .title #{data.title}
 
                   +text-row 
                     .p.
@@ -59,75 +52,24 @@ html(lang="nl")
                       Efficiently unleash cross-media information without cross-media value. Quickly maximize 
                       timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
                       solutions without functional solutions.
-                  
+                
 
+                  +text-row
+                    +button(title="my button", href="#{data.website.href}")
 
-
-                  // repeater
-                  each n in [1,2,3]
-
-                    +image-row
-                      a(href="#{data.website.href}#{n}/")
-                        img(src="http://placekitten.com/1200/#{Math.round(Math.random() * 400)+ 500}", width="600", height="", editable="true")
-
-                    +text-row
-                      .title 
-                        a(href="#{data.website.href}#{n}/") Subheading
-
-                    +text-row
-                      .p.
-                        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
-                        procrastinate B2C users after installed base benefits. Dramatically visualize customer 
-                        directed convergence without revolutionary ROI.
-
-                    +text-row
-                      .p.
-                        Efficiently unleash cross-media information without cross-media value. Quickly maximize 
-                        timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
-                        solutions without functional solutions.
-
-                    +text-row
-                      +button(title="my button", href="http://www.google.com")
-
-                    +spacer-row-small
-
-
-                // footer icons
-                +table.footer.footer-icons
-                  tr: td(height='15', colspan='5')
-                  tr
-                    td.spacer(width='20')
-                    td 
-                      a(href="#{data.twitter_url}"): img(src="img/twitter.gif", width="30", height="30") 
-                      &nbsp;
-                      a(href="#{data.facebook_url}"): img(src="img/facebook.gif", width="30", height="30") 
-                    td.spacer(width='20')
-                  tr: td(height='15', colspan='5')
+                  +spacer-row
 
 
 
                 // footer
                 +table.footer(bgcolor='#ffffff')
-                  +spacer-row-small(colspan="2")
-                  tr
-                    td(width="50%", valign="top")
-                      +table
-                        +text-block
-                          .title Disclaimer
-                        +text-block
-                          .p Dramatically maintain clicks-and-mortar solutions without functional solutions because you subscribed at #{data.website.title}
-                        +text-row
-                          .p Copyright &copy; All rights reserved.
-                    td.spacer(width='20')
-                    td(width="50%", valign="top")
-                      +table
-                        +text-block
-                          .title Unsubscribe
-                        +text-block
-                          .p No more news from us? 
-                            a(href="#{data.unsubscribe}") Unsubscribe
-                        +text-row
-                          .p Collaboratively administrate empowered markets via plug-and-play networks.
+                  +spacer-row
+                  +text-block
+                    .title Disclaimer
+                  +text-block
+                    .p Dramatically maintain clicks-and-mortar solutions without functional solutions because you subscribed at #{data.website.title}
+                  +text-row
+                    .p Copyright &copy; All rights reserved.
 
               td &nbsp;
             tr: td(height='30', colspan='3')
