@@ -253,7 +253,8 @@ module.exports = (grunt) ->
             service: '<%= setup.transport.service %>'
             auth: 
               user: '<%= setup.auth.user %>'
-              pass: getPwd()
+              pass: require('./tasks/setup/getPwd.coffee')()
+
         recipients: '<%= setup.recipients %>'
         subject: "<%= pkg.name %>"
         from: "<%= setup.auth.user %>"
@@ -284,40 +285,9 @@ module.exports = (grunt) ->
         ]
 
 
-
-
-
     # ---
     # replace and inline
     includereplace:
       styles:
         src: 'build/*.html'
         dest: ''
-
-
-
-
-
-
-
-# ---
-# decrypt password from setup file
-
-getPwd = ->
-  fs = require('fs')
-
-  # check if file exists
-  if fs.existsSync('./setup.json')
-
-    setup = require('./setup.json')
-
-    # check for auth
-    if setup.auth
-      crypto = require('crypto')
-
-      decipher = crypto.createDecipher('aes256', 'eightmailboilerplate')
-      decrypted = decipher.update(setup.auth.pass, 'hex', 'utf8') + decipher.final('utf8')
-
-      return decrypted
-
-  return false
