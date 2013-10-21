@@ -30,7 +30,7 @@ module.exports = (grunt) ->
   # task sets
 
   # default
-  grunt.registerTask('default', ['connect', 'watch'])
+  grunt.registerTask('default', ['connect:server', 'watch'])
 
   # build
   grunt.registerTask('build', [
