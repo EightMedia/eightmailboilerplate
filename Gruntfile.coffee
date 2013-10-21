@@ -56,7 +56,7 @@ module.exports = (grunt) ->
     'clean:tmp'                 # clean tmp folder
     'dom_munger:testmail'       # prepare files for testmail
     'nodemailer'                # send mail
-    #'connect:keepalive'         # run server for images referring to localhost
+    'connect:keepalive'         # run server for images referring to localhost
   ])
 
 
@@ -279,7 +279,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: 'build'
-          src: ['*.html']
+          src: ['index.html']
           dest: 'tmp/'
         ]
 
@@ -293,6 +293,9 @@ module.exports = (grunt) ->
       styles:
         src: 'build/*.html'
         dest: ''
+
+
+
 
 
 

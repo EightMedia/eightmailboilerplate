@@ -67,9 +67,6 @@ module.exports = (grunt) ->
 
             setup.auth.pass = password
 
-            #decipher = crypto.createDecipher('aes256', 'eightmailboilerplate');
-            #decrypted = decipher.update(password, 'hex', 'utf8') + decipher.final('utf8');
-
 
         # ---
         # recipients
