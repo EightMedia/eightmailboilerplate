@@ -11,8 +11,11 @@ module.exports = (grunt) ->
     # ---
     # check for setup file
 
+    # overwrite if it exists
     if grunt.file.exists('setup.json')
         setup = grunt.file.readJSON('setup.json')
+
+    # or else create one from template
     else
         setup = require('./setup-template.json')
 

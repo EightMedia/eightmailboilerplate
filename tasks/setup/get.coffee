@@ -1,6 +1,4 @@
-fs = require('fs')
-
-if fs.existsSync('./../../setup.json')
+if require('fs').existsSync('./../../setup.json')
     setup = require('./../../setup.json')
 
 
@@ -9,7 +7,7 @@ if fs.existsSync('./../../setup.json')
 
 type = ->
 
-    if setup?.transport?.type
+    if setup.transport?.type
         return setup.transport.type
 
 
@@ -18,7 +16,7 @@ type = ->
 # service
 
 service = ->
-    if setup?.transport?.service
+    if setup.transport?.service
         return setup.transport.service
 
 
@@ -27,7 +25,7 @@ service = ->
 # user
 
 user = ->
-    if setup?.auth?.user
+    if setup.auth?.user
         return setup.auth.user
 
 
@@ -38,7 +36,7 @@ user = ->
 password = ->
 
     # check for auth
-    if setup?.auth?.pass
+    if setup.auth?.pass
         crypto = require('crypto')
 
         decipher = crypto.createDecipher('aes256', 'eightmailboilerplate')
@@ -56,7 +54,7 @@ password = ->
 # recipients
 
 recipients = (grunt)->
-    if setup?.recipients
+    if setup.recipients
         return setup.recipients
 
 
