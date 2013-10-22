@@ -1,5 +1,4 @@
-# Eightmailboilerplate
-### Kickstart the development of emailtemplates.
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/header.jpg)
 
 This set of Grunt tasks removes a little bit of hassle from the tedious process of crafting e-mail templates.
 
@@ -9,18 +8,6 @@ This set of Grunt tasks removes a little bit of hassle from the tedious process 
 * Automatic css inlining and SASS stylesheets
 * Grunt tasks for exporting and testing
 
-
-## Getting started
-1. `git clone git@github.com:EightMedia/eightmailboilerplate.git`
-2. `npm install`
-3. `grunt`
-
-Head to `http://localhost:8000/` to view your generated html files.
-
-Open up your text editor and start editing files in `src/`. This is where all jade, scss and image files can be found.
-
-4. Optionally run `grunt config` if you want to send testmails from the command line.
-
 ---
 #### Clean Jade templates (with some smart mixins)
 Nest those pretty tables the smart and readable way using jade mixins. This will make your emailtemplate creating life a lot easier.
@@ -29,7 +16,7 @@ Nest those pretty tables the smart and readable way using jade mixins. This will
 
 ---
 
-#### Automatic css inlining and SASS
+#### SASS and automatic CSS inlining
 Write your css in an external file and get all those pretty styles automatically inlined. Stylesheets will also be automatically included in the head of the file so your media queries will work nicely.
 
 Keep your styles in an external SASS file and use clever variables to keep your code clean.
@@ -101,4 +88,16 @@ From now on you can send testmails with `grunt mail`.
 ---
 #### Responsive
 Yeah it's responsive, as your mailings very well should be nowadays.
+
+---
+# Getting started
+1. `git clone git@github.com:EightMedia/eightmailboilerplate.git`
+2. `npm install`
+3. `grunt`
+
+Head to `http://localhost:8000/` to view your generated html files.
+
+Open up your text editor and start editing files in `src/`. This is where all jade, scss and image files can be found.
+
+4. Optionally run `grunt config` if you want to send testmails from the command line.
 
