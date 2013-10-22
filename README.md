@@ -5,12 +5,9 @@ This set of Grunt tasks removes a little bit of hassle from the tedious process 
 
 ---
 ## Features
-* Automatic css inlining
 * Jade templates (with some smart mixins)
-* SASS stylesheets
-* Grunt tasks for exporting
-* Command line testmail
-* Responsive
+* Automatic css inlining and SASS stylesheets
+* Grunt tasks for exporting and testing
 
 
 ## Getting started
@@ -25,63 +22,30 @@ Open up your text editor and start editing files in `src/`. This is where all ja
 4. Optionally run `grunt config` if you want to send testmails from the command line.
 
 ---
-#### Automatic css inlining
-Write your css in an external file and get all those pretty styles automatically inlined. Stylesheets will also be automatically included in the head of the file so your media queries will work nicely.
-
----
 #### Clean Jade templates (with some smart mixins)
 Nest tables the smart way. Write:
 
-```jade
-+table#content(bgcolor='#ffffff')
-    +text-row 
-        .title My Fantastic Email
-
-    +text-row 
-        .p.
-          Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
-          procrastinate B2C users after installed base benefits. Dramatically visualize customer 
-          directed convergence without revolutionary ROI.
-
-    +text-row 
-        .p.
-          Efficiently unleash cross-media information without cross-media value. Quickly maximize 
-          timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar 
-          solutions without functional solutions.
-```
-
-instead of
-
-```html
-<table id="content" width="100%" bgcolor="#ffffff" cellspacing="0" cellpadding="0" border="0">
-    <tr>
-        <td width="20" class="spacer"></td>
-        <td> <div class="title">My Fantastic Email</div></td>
-        <td width="20" class="spacer"></td>
-        </tr>
-    …
-    <tr>
-        <td width="20" class="spacer"></td>
-        <td> <div class="p">
-            Collaboratively administrate empowered markets via plug-and-play networks. Dynamically 
-            procrastinate B2C users after installed base benefits. Dramatically visualize customer 
-            directed convergence without revolutionary ROI.
-            </div>
-        </td>
-        <td width="20" class="spacer"></td>
-      </tr>
-    …
-```
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/jade.jpg)
 
 This will make your emailtemplate creating life a lot easier.
 
 ---
-#### SASS stylesheets
+
+---
+#### Automatic css inlining and SASS
+Write your css in an external file and get all those pretty styles automatically inlined. Stylesheets will also be automatically included in the head of the file so your media queries will work nicely.
+
 Keep your styles in an external SASS file and use clever variables to keep your code clean.
+
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/css.jpg)
+
 
 ---
 #### Grunt tasks for exporting
 `grunt export` generates a zip file with images and html to send to your clients and an html file with img.zip to import into Campaign Monitor.
+
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/export.jpg)
+
 
 ---
 #### External data
@@ -105,7 +69,11 @@ It's easiest to work with one file for all the links and text contents. So edit 
 #### Command line testmails
 You can test your mailing from the command line. Before you can send a test mail, run `grunt config` and answer some questions about your smtp login and the addresses you wish to send the testmail to. This will generate a json file (which you can edit later if you wish). 
 
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/config.jpg)
+
 From now on you can send the testmail with `grunt mail`. 
+
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/mail.jpg)
 
 ```json
 {
@@ -119,8 +87,8 @@ From now on you can send the testmail with `grunt mail`.
     },
     "recipients": [
         {
-            "name": "foo@gmail.com",
-            "email": "foo@gmail.com"
+            "name": "foo@hotmail.com",
+            "email": "foo@hotmail.com"
         },
         {
             "name": "foo@gmail.com",
@@ -129,6 +97,7 @@ From now on you can send the testmail with `grunt mail`.
     ]
 }
 ```
+
 
 ---
 #### Responsive
