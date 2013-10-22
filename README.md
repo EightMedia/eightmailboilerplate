@@ -23,15 +23,12 @@ Open up your text editor and start editing files in `src/`. This is where all ja
 
 ---
 #### Clean Jade templates (with some smart mixins)
-Nest tables the smart way. Write:
+Nest those pretty tables the smart and readable way using jade mixins. This will make your emailtemplate creating life a lot easier.
 
 ![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/jade.jpg)
 
-This will make your emailtemplate creating life a lot easier.
-
 ---
 
----
 #### Automatic css inlining and SASS
 Write your css in an external file and get all those pretty styles automatically inlined. Stylesheets will also be automatically included in the head of the file so your media queries will work nicely.
 
@@ -71,9 +68,7 @@ You can test your mailing from the command line. Before you can send a test mail
 
 ![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/config.jpg)
 
-From now on you can send the testmail with `grunt mail`. 
-
-![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/mail.jpg)
+This will create config.json which you can edit at any time you want.
 
 ```json
 {
@@ -97,6 +92,10 @@ From now on you can send the testmail with `grunt mail`.
     ]
 }
 ```
+
+From now on you can send testmails with `grunt mail`. 
+
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/mail.jpg)
 
 
 ---
