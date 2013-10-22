@@ -1,6 +1,5 @@
 module.exports = (grunt) ->
 
-
   # ---
   # load npm modules
   [
@@ -22,7 +21,7 @@ module.exports = (grunt) ->
 
   # ---
   # load project tasks
-  grunt.loadTasks('tasks/setup/')
+  grunt.loadTasks('tasks/config/')
 
 
 
@@ -74,7 +73,7 @@ module.exports = (grunt) ->
 
     # config
     pkg: grunt.file.readJSON('package.json')
-    setup: require('./tasks/setup/get.coffee')
+    config: require('./tasks/config/get.coffee')
 
 
     # ---
@@ -248,16 +247,16 @@ module.exports = (grunt) ->
     nodemailer:
       options:
         transport:
-          type: "<%= setup.type() %>"
+          type: "<%= config.type %>"
           options:
-            service: "<%= setup.service() %>"
+            service: "<%= config.service %>"
             auth: 
-              user: "<%= setup.user() %>"
-              pass: "<%= setup.password() %>"
+              user: "<%= config.user %>"
+              pass: "<%= config.password %>"
 
-        recipients: require('./tasks/setup/get.coffee').recipients(grunt)
+        recipients: require('./tasks/config/get.coffee').recipients
         subject: "<%= pkg.name %>"
-        from: "<%= setup.user() %>"
+        from: "<%= config.user %>"
 
       external_html:
         src: ['tmp/index.html']

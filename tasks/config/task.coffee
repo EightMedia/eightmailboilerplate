@@ -1,6 +1,6 @@
 module.exports = (grunt) ->
 
-  grunt.registerTask 'setup', 'setup boilerplate', ->
+  grunt.registerTask 'config', 'Configure boilerplate', ->
 
     done = this.async()
 
@@ -9,23 +9,23 @@ module.exports = (grunt) ->
 
 
     # ---
-    # check for setup file
+    # check for config file
 
     # overwrite if it exists
-    if grunt.file.exists('setup.json')
-        setup = grunt.file.readJSON('setup.json')
+    if grunt.file.exists('config.json')
+        config = grunt.file.readJSON('config.json')
 
     # or else create one from template
     else
-        setup = require('./setup-template.json')
+        config = require('./config-template.json')
 
         
 
     # ---
-    # email setup
+    # email config
 
     grunt.log.writeln grunt.log.wordlist(['Setup your SMTP settings'], { color: 'cyan' })
-    grunt.log.writeln grunt.log.wordlist(['These will be saved in setup.json\nwhich you can edit anytime you want.'], { color: 'cyan' })
+    grunt.log.writeln grunt.log.wordlist(['These will be saved in config.json\nwhich you can edit anytime you want.'], { color: 'cyan' })
 
     prompts = [
         {
@@ -57,7 +57,7 @@ module.exports = (grunt) ->
         # ---
         # user
         if email
-            setup.auth.user = email
+            config.auth.user = email
 
 
         # ---
@@ -68,20 +68,20 @@ module.exports = (grunt) ->
             cipher = crypto.createCipher('aes256', 'eightmailboilerplate')
             password = cipher.update(password, 'utf8', 'hex') + cipher.final('hex')
 
-            setup.auth.pass = password
+            config.auth.pass = password
 
 
         # ---
         # recipients
         if recipients
             recipients = ({ 'name': r, 'email': r } for r in recipients.split(','))
-            setup.recipients = recipients
+            config.recipients = recipients
         
     
 
         # ---
-        # create setup file
+        # create config file
 
-        grunt.file.write('setup.json', JSON.stringify(setup, null, 4))
+        grunt.file.write('config.json', JSON.stringify(config, null, 4))
 
         done()
