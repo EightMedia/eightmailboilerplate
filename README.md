@@ -31,9 +31,6 @@ Keep your styles in an external SASS file and use clever variables to keep your 
 ![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/export.jpg)
 
 
-![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/export.jpg)
-
-
 ---
 #### External data
 It's easiest to work with one file for all the links and text contents. So edit all links, or any other data, in data.json and they will be placed inside your html. Access the contents of this file in your .jade files like `data.website.title`.
