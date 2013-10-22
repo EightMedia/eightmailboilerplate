@@ -51,6 +51,7 @@ module.exports = (grunt) ->
   
   # testmail task
   grunt.registerTask('mail', [
+    'check_config'              # check if config file exists
     #'build'                     # build all files
     'clean:tmp'                 # clean tmp folder
     'dom_munger:testmail'       # prepare files for testmail

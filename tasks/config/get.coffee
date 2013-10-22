@@ -1,6 +1,7 @@
 if require('fs').existsSync('./config.json')
     config = require('./../../config.json')
-
+else
+    config = {}
 
 
 # ---

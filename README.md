@@ -51,7 +51,7 @@ It's easiest to work with one file for all the links and text contents. So edit 
 
 ---
 #### Command line testmails
-You can test your mailing from the command line. Before you can send a test mail, run `grunt config` and answer some questions about your smtp login and the addresses you wish to send the testmail to. This will generate a json file (which you can edit later if you wish). 
+You can test your mailing from the command line. Before you can send a test mail, run `grunt config` and answer some questions about your smtp login and the addresses you wish to send the testmail to. 
 
 ![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/config.jpg)
 

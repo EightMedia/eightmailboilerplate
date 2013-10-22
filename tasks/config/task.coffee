@@ -1,5 +1,33 @@
 module.exports = (grunt) ->
 
+
+  # ---
+  # check for config
+
+  grunt.registerTask 'check_config', 'Check if config file exists', ->
+
+    # check if config file exists
+    if not grunt.file.exists('config.json')
+
+      # fail
+      grunt.fail.warn('config.json doesn\'t exist. \nRun `grunt config` to set it up.')
+
+    # config file
+    else
+
+      # test
+      config = grunt.file.readJSON('config.json')
+      grunt.fail.warn('config.json: No transport type set') if not config.transport?.type
+      grunt.fail.warn('config.json: No transport service set') if not config.transport?.service
+      grunt.fail.warn('config.json: No login email set') if not config.auth?.user
+      grunt.fail.warn('config.json: No login password set') if not config.auth?.pass
+      grunt.fail.warn('config.json: No recipients set') if not config.recipients or not config.recipients.length
+
+
+
+  # ---
+  # configure
+
   grunt.registerTask 'config', 'Configure boilerplate', ->
 
     done = this.async()
