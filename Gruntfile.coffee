@@ -254,7 +254,7 @@ module.exports = (grunt) ->
               user: "<%= config.user %>"
               pass: "<%= config.password %>"
 
-        recipients: require('./tasks/config/get.coffee').recipients
+        recipients: "<%= config.recipients %>"
         subject: "<%= pkg.name %>"
         from: "<%= config.user %>"
 
