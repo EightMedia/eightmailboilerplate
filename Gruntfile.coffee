@@ -116,8 +116,7 @@ module.exports = (grunt) ->
     # clean
     clean:
       build: ['build/**/*']
-      campaignmonitor: ['campaignmonitor/**/*']
-      export: ['zip/**/*']
+      export: ['export/**/*']
       tmp: ['tmp/**/*']
 
 
@@ -132,7 +131,7 @@ module.exports = (grunt) ->
             {
               expand: true
               src: ['**/*.html']
-              dest: 'campaignmonitor/'
+              dest: 'export/campaignmonitor/'
               cwd: 'build/'
             }
           ]
@@ -145,7 +144,7 @@ module.exports = (grunt) ->
       # compress img.zip
       campaignmonitor:
         options:
-          archive: "campaignmonitor/img.zip"
+          archive: "export/campaignmonitor/img.zip"
           mode: 'zip'
         files: [
           {
@@ -157,11 +156,11 @@ module.exports = (grunt) ->
         ]
 
 
-      # create zip file 'packagename<date><time>.zip'
+      # create zip file to 'export/zip/packagename<date><time>.zip'
       export:
         options:
           mode: 'zip'
-          archive: """zip/<%= pkg.name %> (<%= grunt.template.date(new Date(), 'yyyymmddHHMMss') %>).zip"""
+          archive: """export/zip/<%= pkg.name %> (<%= grunt.template.date(new Date(), 'yyyymmddHHMMss') %>).zip"""
           
         files: [
 

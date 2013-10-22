@@ -16,8 +16,7 @@ results
 npm-debug.log
 
 dist
-zip
 tmp
-setup.json
-campaignmonitor
+export
 config.json
+.DS_Store

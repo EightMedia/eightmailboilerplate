@@ -26,7 +26,10 @@ Keep your styles in an external SASS file and use clever variables to keep your 
 
 ---
 #### Grunt tasks for exporting
-`grunt export` generates a zip file with images and html to send to your clients and an html file with img.zip to import into Campaign Monitor.
+`grunt export` generates a version-numbered-zip-file with images and html to send to your clients and an html file with img.zip to import into Campaign Monitor. These files can be found in `export/zip` and `export/campaignmonitor`.
+
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/export.jpg)
+
 
 ![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/export.jpg)
 
