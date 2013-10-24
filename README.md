@@ -89,7 +89,7 @@ From now on you can send testmails with `grunt mail`.
 #### Responsive
 Yeah it's responsive, as your mailings very well should be nowadays. Some basic examples are available to get you started, but feel free to start from skratch. 
 
-![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/responsives.jpg)
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/responsive.jpg)
 
 ---
 # Getting started
