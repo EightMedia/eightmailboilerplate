@@ -10,7 +10,7 @@ This set of Grunt tasks removes a little bit of hassle from the tedious process 
 
 ---
 #### Clean Jade templates (with some smart mixins)
-Nest those pretty tables the smart and readable way using jade mixins. This will make your emailtemplate creating life a lot easier.
+Nest those pretty tables the smart and readable way using jade mixins. This will make your emailtemplate creating life a lot easier. You can find the jade files in `src/` and `src/mixins`.
 
 ![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/jade.jpg)
 
@@ -87,9 +87,9 @@ From now on you can send testmails with `grunt mail`.
 
 ---
 #### Responsive
-Yeah it's responsive, as your mailings very well should be nowadays.
+Yeah it's responsive, as your mailings very well should be nowadays. Some basic examples are available to get you started, but feel free to start from skratch. 
 
-![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/responsive.jpg)
+![](https://raw.github.com/EightMedia/eightmailboilerplate/master/github/responsives.jpg)
 
 ---
 # Getting started
