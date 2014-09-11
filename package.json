@@ -1,10 +1,21 @@
 {
   "name": "eightmailboilerplate",
   "version": "0.1.0",
-  "author": "Arjen Scherff-de Water",
+  "description": "Kickstart the development of email templates",
+  "main": "gulp",
   "scripts": {
-    "start": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EightMedia/eightmailboilerplate"
+  },
+  "author": "Arjen Scherff-de Water",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EightMedia/eightmailboilerplate/issues"
+  },
+  "homepage": "https://github.com/EightMedia/eightmailboilerplate",
   "devDependencies": {
     "cheerio": "^0.17.0",
     "dateformat": "^1.0.8-1.2.3",
