@@ -1,23 +1,28 @@
 {
   "name": "eightmailboilerplate",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "author": "Arjen Scherff-de Water",
-  "dependencies": {},
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
-    "grunt": "~0.4.x",
-    "grunt-contrib-watch": "0.2.x",
-    "grunt-contrib-compass": "0.5.x",
-    "grunt-contrib-compress": "~0.5.2",
-    "grunt-contrib-connect": "~0.3.0",
-    "grunt-inline-css": "git://github.com/Aratramba/grunt-inline-css.git",
-    "grunt-contrib-jade": "~0.8.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-imagemin": "~0.3.0",
-    "grunt-nodemailer": "~0.1.1",
-    "prompt": "~0.2.11",
-    "bcrypt": "~0.7.7",
-    "grunt-include-replace": "~1.1.1",
-    "grunt-dom-munger": "~2.0.1"
+    "cheerio": "^0.17.0",
+    "dateformat": "^1.0.8-1.2.3",
+    "gulp": "~3.8.7",
+    "gulp-autoprefixer": "^1.0.0",
+    "gulp-imagemin": "^1.0.1",
+    "gulp-inline-css": "~0.2.7",
+    "gulp-jade": "^0.7.0",
+    "gulp-livereload": "^2.1.1",
+    "gulp-minify-css": "^0.3.8",
+    "gulp-plumber": "^0.6.4",
+    "gulp-rename": "~1.2.0",
+    "gulp-sass": "^0.7.3",
+    "gulp-util": "^3.0.1",
+    "gulp-w3cjs": "^0.2.0",
+    "gulp-zip": "^2.0.1",
+    "nodemailer": "^1.2.2",
+    "require-dir": "^0.1.0",
+    "slugify": "^0.1.0"
   }
 }

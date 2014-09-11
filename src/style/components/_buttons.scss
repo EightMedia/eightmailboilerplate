@@ -1,0 +1,15 @@
+// button
+.button, 
+.button a{
+  background: $buttons;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: $font; 
+}
+
+.button{
+  padding: 10px 30px;
+}   

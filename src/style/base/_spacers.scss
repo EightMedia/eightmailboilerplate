@@ -1,0 +1,28 @@
+// spacers
+.spacer-hr{
+  border-bottom: 1px solid #efeff0;
+}
+.spacer-hr-top{
+  border-top: 1px solid #efeff0;
+}
+.spacer-row{
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.spacer-row-small{
+  height: 10px;
+  line-height: 10px;
+  overflow: hidden;
+}
+.spacer-row-tiny{
+  font-size: 1px;
+  height: 5px;
+  line-height: 5px;
+  overflow: hidden;
+}
+.spacer-gif{
+  height: 30px;
+  width: 50px;
+  vertical-align: top;
+}

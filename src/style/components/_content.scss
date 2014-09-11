@@ -1,0 +1,26 @@
+#content{
+  border-left: 1px solid $borders;
+  border-right: 1px solid $borders;
+  border-top: 1px solid $borders;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: $textalign;
+
+  .title{
+    font-weight: bold;
+    color: $text-headings;
+    font-size: 25px;
+    line-height: 32px;
+  }
+
+  .title a{
+    text-decoration: none !important;
+  }
+
+  p,
+  .p{
+    font-size: 16px;
+    line-height: 24px;
+    text-align: $textalign;
+  }
+}

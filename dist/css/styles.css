@@ -1,0 +1,32 @@
+#outlook a{padding:0}
+body,html{width:100%!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0}
+.ExternalClass{width:100%}
+.ExternalClass,.ExternalClass div,.ExternalClass font,.ExternalClass p,.ExternalClass span,.ExternalClass td{line-height:100%}
+#backgroundTable{margin:0;padding:0;width:100%!important;line-height:100%!important}
+img{outline:0;text-decoration:none;-ms-interpolation-mode:bicubic;margin:0;padding:0;border:none}
+a img{color:#fff;text-decoration:none}
+.image_fix{display:block;margin:0}
+.spacer-hr{border-bottom:1px solid #efeff0}
+.spacer-hr-top{border-top:1px solid #efeff0}
+.spacer-row{height:20px;line-height:20px;overflow:hidden}
+.spacer-row-small{height:10px;line-height:10px;overflow:hidden}
+.spacer-row-tiny{font-size:1px;height:5px;line-height:5px;overflow:hidden}
+.spacer-gif{height:30px;width:50px;vertical-align:top}
+.button,.button a{background:#1d1f21;color:#fff;font-weight:700;border-radius:5px;text-decoration:none;font-size:18px;font-family:HelveticaNeue,"Helvetica Neue",HelveticaNeueRoman,HelveticaNeue-Roman,"Helvetica Neue Roman",Helvetica,Tahoma,Geneva,Arial,sans-serif}
+.button{padding:10px 30px}
+#content{border-left:1px solid #eaeaea;border-right:1px solid #eaeaea;border-top:1px solid #eaeaea;font-size:16px;line-height:24px;text-align:center}
+#content .title{font-weight:700;color:#1d1f21;font-size:25px;line-height:32px}
+#content .title a{text-decoration:none!important}
+#content .p,#content p{font-size:16px;line-height:24px;text-align:center}
+.footer{border:1px solid #eaeaea;font-size:12px;color:#838383;line-height:18px}
+.footer .p{font-size:12px;color:#838383;line-height:18px}
+.footer a{color:#838383;text-decoration:underline}
+.footer .title{font-size:12px;margin-bottom:5px;color:#1d1f21;font-weight:700}
+.footer-icons{border-bottom:none}
+.footer-icons td{background:#1d1f21}
+#preheader .p{font-size:11px}
+#preheader a{color:#2b2b2b}
+#container,#main,body,html{background:#fcfcfc;color:#2b2b2b;font-family:HelveticaNeue,"Helvetica Neue",HelveticaNeueRoman,HelveticaNeue-Roman,"Helvetica Neue Roman",Helvetica,Tahoma,Geneva,Arial,sans-serif;font-weight:400;font-stretch:normal;font-size:14px;line-height:22px}
+.p,p{margin-top:0;margin-bottom:15px;color:#2b2b2b;font-family:HelveticaNeue,"Helvetica Neue",HelveticaNeueRoman,HelveticaNeue-Roman,"Helvetica Neue Roman",Helvetica,Tahoma,Geneva,Arial,sans-serif}
+a{text-decoration:underline;color:#1d1f21}
+a img{border:0}

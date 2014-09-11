@@ -1,13 +1,14 @@
 //- table
 mixin table
-    table(
-        id=attributes.id, 
-        class=attributes.class, 
-        align=attributes.align, 
-        width=(attributes.width) ? attributes.width : '100%', 
-        bgcolor=(attributes.bgcolor) ? attributes.bgcolor : '',
-        cellspacing='0', 
-        cellpadding='0', 
-        border='0'
-    )
-        block
+	table(
+		id=attributes.id, 
+		class=attributes.class, 
+		align=attributes.align, 
+		width=(attributes.width) ? attributes.width : '100%', 
+		bgcolor=(attributes.bgcolor) ? attributes.bgcolor : false,
+		cellspacing='0', 
+		cellpadding='0', 
+		border='0'
+	)
+		block
+

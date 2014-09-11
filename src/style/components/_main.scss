@@ -1,0 +1,23 @@
+html, body, #container, #main {
+  background: $bg;
+  color: $text-dark;
+  font-family: $font; 
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+p,
+.p {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: $text-dark;
+  font-family: $font; 
+}
+a {
+  text-decoration: underline;
+  color: $text-headings;
+}
+a img{
+  border: 0;
+}

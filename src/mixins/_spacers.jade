@@ -1,21 +1,40 @@
 //- basic spacer row
 mixin spacer-row
-    tr
-        td(
-            class=(attributes.class) ? attributes.class : 'spacer-row',
-            colspan=(attributes.colspan) ? attributes.colspan : '3'
-        ) 
-            &nbsp;
+  tr
+    td(
+      class=(attributes.class) ? attributes.class : 'spacer-row',
+      colspan=(attributes.colspan) ? attributes.colspan : '3'
+    ) 
+      | &nbsp;
 
-    block
+  block
+
 
 
 //- small spacer row
 mixin spacer-row-small
-    +spacer-row(class='spacer-row-small', attributes)
+  +spacer-row(class='spacer-row-small', colspan=(attributes.colspan), class=attributes.class)
+
+
+//- small spacer tiny
+mixin spacer-row-tiny
+  +spacer-row(class='spacer-row-tiny', colspan=(attributes.colspan), class=attributes.class)
 
 
 //- spacer column
 mixin spacer-col
-    td.spacer(width='20', class=(attributes.class) ? attributes.class : '') 
-        img(src="img/spacer.gif", width="20")
+  td.spacer(
+    width=(attributes.width) ? attributes.width : '16', 
+    bgcolor=(attributes.bgcolor) ? attributes.bgcolor : false, 
+    colspan=(attributes.colspan) ? attributes.colspan : false, 
+    class=(attributes.class) ? attributes.class : '') 
+
+    img(src="img/spacer.gif", width=(attributes.width) ? attributes.width : '16', alt="")
+
+
+mixin spacer-col-small
+  +spacer-col(width="10", class=attributes.class, bgcolor=(attributes.bgcolor), colspan=(attributes.colspan))
+
+
+mixin spacer-col-tiny
+  +spacer-col(width="5", class=attributes.class, bgcolor=(attributes.bgcolor), colspan=(attributes.colspan))

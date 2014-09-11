@@ -1,0 +1,44 @@
+.mobile-only{
+  display: none !important;
+}
+
+
+@media only screen and (max-width: 600px){
+  #container-width,
+  #content img{
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+  }
+  .mobile-hidden{
+    display: none !important;
+  }
+  .mobile-only{
+    display: block !important;
+  }
+  .mobile-stretcher{
+    width: auto !important
+  }
+
+  // text align
+  table, td, p, .p, .align-right{
+    text-align: left !important;
+  }
+
+  // columns
+  td[class="pattern"] .col{
+    width: 100%;
+    display: block;
+  }
+  td[class="pattern"] img {
+    width: 100%;
+    height: auto !important;
+  }
+  td[class="pattern"] img.icon {
+    width: auto;
+    height: auto !important;
+  }
+  td[class="spacer"]{
+    width: 15px !important;
+  }
+}
