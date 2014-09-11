@@ -1,7 +1,7 @@
 {
   "auth": {
-    "user": "",
+    "user": "me@gmail.com",
     "pass": ""
   },
-  "recipients": ""
+  "recipients": "me@gmail.com, me@hotmail.com"
 }

@@ -3,10 +3,17 @@ var gulp          = require('gulp');
 var nodemailer    = require('nodemailer');
 var cheerio       = require('cheerio');
 var settings      = require('../settings.js');
-var config        = require('../../config.json');
 var data          = require('../../data.json');
 
 gulp.task('testmail', function(){
+
+  if(!fs.existsSync('config.json')){
+    console.warn("missing config.json - you will not be able to run testmails");
+    return;
+  }
+
+  var config = require('../../config.json');
+
 
   // load html file
   var html = fs.readFileSync('dist/index.inlinecss.html', 'utf8');
